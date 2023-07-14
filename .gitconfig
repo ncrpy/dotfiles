@@ -1,0 +1,19 @@
+[user]
+	name = ncrpy
+	email = 61719652+ncrpy@users.noreply.github.com
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff
+[mergetool]
+	keepBackup = false
+	conflictstyle = diff3
+	prompt = false
