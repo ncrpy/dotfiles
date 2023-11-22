@@ -5,7 +5,8 @@
 Clone the repository.
 
 ```console
-git clone --recursive https://github.com/ncrpy/dotfiles ~/.dotfiles
+export DOTFILES_DIR="${HOME}/.dotfiles"
+git clone --recursive https://github.com/ncrpy/dotfiles "${DOTFILES_DIR}"
 cd .dotfiles
 ```
 
@@ -20,13 +21,13 @@ zsh
 Create symbolic links to the config files.
 
 ```console
-export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:=$HOME/.config}
-export ZDOTDIR=${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}
-ln -s $HOME/.dotfiles/.zshenv $HOME/.zshenv
-ln -s $HOME/.dotfiles/.config/zsh $ZDOTDIR
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
+export ZDOTDIR="${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}"
+ln -s "${DOTFILES_DIR}/.zshenv" "${HOME}/.zshenv"
+ln -s "${DOTFILES_DIR}/.config/zsh" "${ZDOTDIR}"
 setopt EXTENDED_GLOB
-for rcfile in $ZDOTDIR/.zprezto/runcoms/^README.md(.N); do
-  ln -s $rcfile $ZDOTDIR/.${rcfile:t}
+for rcfile in "${ZDOTDIR}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR}/.${rcfile:t}"
 done
 ```
 
@@ -39,5 +40,24 @@ chsh -s /bin/zsh
 ### Foot
 
 ```console
-ln -s ~/.dotfiles/.config/foot ~/.config/foot
+ln -s "${DOTFILES_DIR}/.config/foot" "${HOME}/.config/foot"
 ```
+
+### Tmux
+
+```console
+ln -s "${DOTFILES_DIR}/.config/tmux" "${HOME}/.config/tmux"
+```
+Launch tmux and install plugins by pressing `prefix` + <kbd>I</kbd>.
+
+### Vim
+
+```console
+ln -s "${DOTFILES_DIR}/.vim" "${HOME}/.vim"
+```
+
+### Neovim
+
+wip
+
+## Update
