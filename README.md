@@ -2,12 +2,13 @@
 
 ## Installation
 
+
+
 Clone the repository.
 
 ```console
 export DOTFILES_DIR="${HOME}/.dotfiles"
 git clone --recursive https://github.com/ncrpy/dotfiles "${DOTFILES_DIR}"
-cd .dotfiles
 ```
 
 ### Zsh
@@ -58,6 +59,21 @@ ln -s "${DOTFILES_DIR}/.vim" "${HOME}/.vim"
 
 ### Neovim
 
-wip
+WIP
 
 ## Update
+
+### Update this repository
+
+```console
+cd $DOTFILES_DIR
+git pull
+git submodule sync --recursive
+git submodule update --init --recursive
+```
+
+### Update submodules
+
+```console
+git submodule update --remote --recursive
+```
