@@ -19,7 +19,7 @@ zsh
 
 Create symbolic links to the config files.
 
-```zsh
+```console
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
 export ZDOTDIR="${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}"
 ln -s "${DOTFILES_DIR}/.zshenv" "${HOME}/.zshenv"
@@ -61,7 +61,7 @@ WIP
 
 ### Others
 
-```bash
+```console
 for dotfile in "${DOTFILES_DIR}"/.*; do
   [[ ! -f "${dotfile}" ]] && continue
   [[ `basename ${dotfile}` == ".gitmodules" ]] && continue
