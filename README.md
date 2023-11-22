@@ -57,7 +57,10 @@ ln -s "${DOTFILES_DIR}/.vim" "${HOME}/.vim"
 
 ### Neovim
 
-WIP
+```console
+ln -s "${DOTFILES_DIR}/.config/nvim" "${HOME}/.config/nvim"
+```
+Install Node.js, Deno, ripgrep for dependencies.
 
 ### Others
 
