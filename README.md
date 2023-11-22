@@ -9,11 +9,6 @@ export DOTFILES_DIR="${HOME}/.dotfiles"
 git clone --recursive https://github.com/ncrpy/dotfiles "${DOTFILES_DIR}"
 ```
 
-Create symbolic links.
-
-```
-for 
-
 ### Zsh
 
 Launch Zsh.
