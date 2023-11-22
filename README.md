@@ -2,14 +2,17 @@
 
 ## Installation
 
-
-
 Clone the repository.
 
 ```console
 export DOTFILES_DIR="${HOME}/.dotfiles"
 git clone --recursive https://github.com/ncrpy/dotfiles "${DOTFILES_DIR}"
 ```
+
+Create symbolic links.
+
+```
+for 
 
 ### Zsh
 
@@ -21,7 +24,7 @@ zsh
 
 Create symbolic links to the config files.
 
-```console
+```zsh
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
 export ZDOTDIR="${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}"
 ln -s "${DOTFILES_DIR}/.zshenv" "${HOME}/.zshenv"
@@ -60,6 +63,16 @@ ln -s "${DOTFILES_DIR}/.vim" "${HOME}/.vim"
 ### Neovim
 
 WIP
+
+### Others
+
+```bash
+for dotfile in "${DOTFILES_DIR}"/.*; do
+  [[ ! -f "${dotfile}" ]] && continue
+  [[ `basename ${dotfile}` == ".gitmodules" ]] && continue
+  ln -s "${dotfile}" "${HOME}/`basename ${dotfile}`"
+done
+```
 
 ## Update
 
