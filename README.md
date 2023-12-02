@@ -42,6 +42,13 @@ chsh -s /bin/zsh
 cp -nrT "${DOTFILES_DIR}/.ssh-template" "${HOME}/.ssh"
 ```
 
+Setup ssh-agent.
+
+```console
+cp -nrT "${DOTFILES_DIR}/.config/systemd" "${HOME}/.config/systemd"
+systemd --user enable --now ssh-agent
+```
+
 ### Foot
 
 ```console
