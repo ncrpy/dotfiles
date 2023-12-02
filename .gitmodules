@@ -7,3 +7,6 @@
 [submodule ".config/tmux"]
 	path = .config/tmux
 	url = git@github.com:ncrpy/tmux.git
+[submodule ".config/zsh/.zprezto"]
+	path = .config/zsh/.zprezto
+	url = git@github.com:ncrpy/prezto.git
