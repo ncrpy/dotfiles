@@ -1,9 +1,6 @@
 [submodule ".vim"]
 	path = .vim
 	url = git@github.com:ncrpy/dotvim.git
-[submodule ".config/zsh"]
-	path = .config/zsh
-	url = git@github.com:ncrpy/zsh.git
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@github.com:ncrpy/nvim.git
