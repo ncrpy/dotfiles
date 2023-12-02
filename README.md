@@ -36,6 +36,12 @@ Change the default shell to Zsh.
 chsh -s /bin/zsh
 ```
 
+### SSH
+
+```console
+cp -nrT "${DOTFILES_DIR}/.ssh-template" "${HOME}/.ssh"
+```
+
 ### Foot
 
 ```console
