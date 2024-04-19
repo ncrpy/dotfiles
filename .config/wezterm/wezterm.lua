@@ -1,6 +1,7 @@
 local wezterm = require "wezterm"
 
 return {
+  default_prog = { '/bin/zsh', '-l' },
   font = wezterm.font_with_fallback({
     "PlemolJP Console NF",
   }),
