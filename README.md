@@ -6,7 +6,7 @@ Clone the repository.
 
 ```console
 export DOTFILES_DIR="${HOME}/.dotfiles"
-git clone --recursive https://github.com/ncrpy/dotfiles "${DOTFILES_DIR}"
+git clone --recursive git@github.com:ncrpy/dotfiles.git "${DOTFILES_DIR}"
 ```
 
 ### Zsh
