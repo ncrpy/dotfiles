@@ -11,19 +11,19 @@ git clone --recursive git@github.com:ncrpy/dotfiles.git "${DOTFILES_DIR}"
 
 ### Zsh
 
-Launch Zsh.
-
-```console
-ln -s "${DOTFILES_DIR}/.zshenv" "${HOME}/.zshenv"
-zsh
-```
-
 Create symbolic links to the config files.
 
 ```console
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
 export ZDOTDIR="${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}"
 ln -s "${DOTFILES_DIR}/.config/zsh" "${ZDOTDIR}"
+```
+
+Launch Zsh.
+
+```console
+ln -s "${DOTFILES_DIR}/.zshenv" "${HOME}/.zshenv"
+zsh
 ```
 
 Change the default shell to Zsh.
