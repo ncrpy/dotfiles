@@ -42,7 +42,7 @@ Setup ssh-agent.
 
 ```console
 cp -nrT "${DOTFILES_DIR}/.config/systemd" "${HOME}/.config/systemd"
-systemd --user enable --now ssh-agent
+systemctl --user enable --now ssh-agent
 ```
 
 ### Foot
