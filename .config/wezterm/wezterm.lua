@@ -39,5 +39,15 @@ return {
       mods = 'LEADER|SHIFT',
       action = wezterm.action.RotatePanes 'CounterClockwise',
     },
+    {
+      key = 'l',
+      mods = 'LEADER',
+      action = wezterm.action.ShowLauncher,
+    },
+    {
+      key = 't',
+      mods = 'LEADER',
+      action = wezterm.action.ShowTabNavigator,
+    },
   },
 }
