@@ -8,7 +8,7 @@ return {
   use_ime = true,
   font_size = 13.0,
   color_scheme = "Catppuccin Mocha",
-  hide_tab_bar_if_only_one_tab = true,
+  window_decorations = "INTEGRATED_BUTTONS | RESIZE",
   adjust_window_size_when_changing_font_size = false,
   window_background_opacity = 0.9,
   enable_scroll_bar = true,
