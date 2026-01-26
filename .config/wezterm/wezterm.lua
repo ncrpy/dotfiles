@@ -8,6 +8,23 @@ else
   config.default_prog = { "/bin/zsh", "-l" }
 end
 
+config.skip_close_confirmation_for_processes_named = {
+  "bash",
+  "sh",
+  "zsh",
+  "fish",
+  "tmux",
+  "nu",
+  "cmd.exe",
+  "pwsh.exe",
+  "powershell.exe",
+  "wsl.exe",
+  "wslhost.exe",
+  "conhost.exe",
+}
+
+config.ssh_backend = "Ssh2"
+
 config.font = wezterm.font_with_fallback({
   { family = "PlemolJP Console NF", weight = "Medium" },
 })
@@ -71,7 +88,7 @@ config.keys = {
   {
     key = "V",
     mods = "CTRL|SHIFT",
-    action = wezterm.action.PasteFrom("Clipboard")
+    action = wezterm.action.PasteFrom("Clipboard"),
   },
   {
     key = "s",
