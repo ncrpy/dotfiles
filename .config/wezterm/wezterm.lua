@@ -1,6 +1,14 @@
 local wezterm = require("wezterm")
 
+local version_date = wezterm.version:sub(1, 8)
+local is_nightly = version_date > "20240203"
+
 local config = wezterm.config_builder()
+
+if is_nightly then
+  config.ssh_backend = "Ssh2"
+  config.mux_enable_ssh_agent = false
+end
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   config.default_prog = { "pwsh.exe" }
@@ -22,8 +30,6 @@ config.skip_close_confirmation_for_processes_named = {
   "wslhost.exe",
   "conhost.exe",
 }
-
-config.ssh_backend = "Ssh2"
 
 config.font = wezterm.font_with_fallback({
   { family = "PlemolJP Console NF", weight = "Medium" },
