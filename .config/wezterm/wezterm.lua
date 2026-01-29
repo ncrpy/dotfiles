@@ -133,4 +133,75 @@ config.keys = {
   },
 }
 
+local domain_icons = {
+  ubuntu = {
+    char = wezterm.nerdfonts.linux_ubuntu,
+    offset = 1,
+  },
+  debian = {
+    char = wezterm.nerdfonts.linux_debian,
+    offset = 1,
+  },
+  almalinux = {
+    char = wezterm.nerdfonts.linux_almalinux,
+    offset = 1,
+  },
+  archlinux = {
+    char = wezterm.nerdfonts.linux_archlinux,
+    offset = 1,
+  },
+  fedora = {
+    char = wezterm.nerdfonts.linux_fedora,
+    offset = 1,
+  },
+  windows = {
+    char = wezterm.nerdfonts.dev_powershell,
+    offset = 3,
+  },
+  darwin = {
+    char = wezterm.nerdfonts.linux_apple,
+    offset = 1,
+  },
+}
+
+local function get_icon_for_domain(domain_name)
+  if domain_name == "local" then
+    if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+      return domain_icons.windows
+    elseif wezterm.target_triple == "x86_64-apple-darwin" then
+      return domain_icons.darwin
+    elseif wezterm.target_triple == "aarch64-apple-darwin" then
+      return domain_icons.darwin
+    else
+      return {
+        char = wezterm.nerdfonts.linux_tux,
+        offset = 1,
+      }
+    end
+  end
+
+  for pattern, icon in pairs(domain_icons) do
+    if domain_name:lower():find(pattern) ~= nil then
+      return icon
+    end
+  end
+
+  return {
+    char = wezterm.nerdfonts.oct_terminal,
+    offset = 1,
+  }
+end
+
+wezterm.on("format-tab-title", function(tab, _, _, _, _, _)
+  local pane = tab.active_pane
+  local title = pane.title
+
+  if pane.domain_name then
+    local icon = get_icon_for_domain(pane.domain_name)
+    title = icon.char .. string.rep(" ", 4 - icon.offset) .. title
+  end
+
+  return title
+end)
+
 return config
